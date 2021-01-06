@@ -7,3 +7,4 @@ DIIS AND FIIS,
 Market Cap
 Edinburgh 
 Aaj laptop
+Prices increase 
