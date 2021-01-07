@@ -6,5 +6,5 @@ YOU CAN ALSO TRACK THE TRENDS...
 DIIS AND FIIS, 
 Market Cap
 Edinburgh 
-Aaj laptop
+Prices 
 Prices increase 
