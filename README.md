@@ -7,4 +7,4 @@ DIIS AND FIIS,
 Market Cap
 Edinburgh 
 Prices 
-Prices increase 
+Prices increase  finally its competitors 
