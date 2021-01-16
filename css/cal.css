@@ -1,0 +1,20 @@
+#Chead{
+    background-image: linear-gradient(to right,rgb(255, 251, 251),rgb(177, 98, 241));
+    color: black;
+}
+
+
+.breadcrumb{
+    background-image: linear-gradient(to right,rgb(255, 251, 251),rgb(84, 72, 139));
+    color: black;
+}
+
+nav ol li {
+    font-size: 21px;
+
+}
+
+nav ol li a {
+    text-decoration: none;
+
+}
