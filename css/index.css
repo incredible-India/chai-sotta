@@ -1,0 +1,65 @@
+#Chead{
+    background-image: linear-gradient(to right,rgb(255, 251, 251),rgb(182, 141, 7));
+    color: black;
+}
+
+
+.breadcrumb{
+    background-image: linear-gradient(to right,rgb(255, 251, 251),rgb(182, 141, 7));
+    color: black;
+}
+
+nav ol li {
+    font-size: 21px;
+
+}
+
+nav ol li a {
+    text-decoration: none;
+
+}
+
+.picPara{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageBoB
+{
+
+    border-radius: 50%;
+}
+
+.para{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+@keyframes anima {
+    0%{
+        font-size: 40px;
+
+    }
+    50%{
+        font-size: 70px;
+
+    }
+    100%{
+        font-size: 40px;
+    }
+}
+
+#heart{
+    font-size: 40px;
+    color: red;
+    animation-name: anima;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
