@@ -67,3 +67,18 @@ nav ol li a {
     animation-iteration-count: infinite;
     animation-duration: 1s;
 }
+
+.breadcrumb{
+    margin-top: 10px;
+}
+
+.opensource{
+    margin-top: 5px;
+    padding: 5px;
+    display: flex;
+     flex-direction: column;
+     
+     justify-content: center; 
+     align-items: center;
+
+}
