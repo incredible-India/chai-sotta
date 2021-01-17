@@ -66,6 +66,8 @@ NoPerButton.addEventListener('click', () => {
 
   calculateBtn.addEventListener('click', (event) => {
 
+    let numberofperson =[];//for the chart we need this
+    let perPersonCost=[];//for the making the chart we need this
     //calculate total number of tea nd ammount of all persons
 
 
@@ -94,28 +96,30 @@ NoPerButton.addEventListener('click', () => {
       let sottaprices = (document.getElementById(`${i + 1}s`).value);
       let otherprices = (document.getElementById(`${i + 1}o`).value);
 
+
+
       if (teaPrice == "")//if user did not enter any number of that ammount ;
       {
-        teaPrices = 0;
-        teaPrice=0;
+        teaPrices = 0;//total price of tea of one indivisula person will be zero if user did not enter the data
+        teaPrice=0;//total number of tea (in this case it will considered as zero)
       }
       else {
 
-        teaPrices = (teaPrice * TeaPrice);
+        teaPrices = (teaPrice * TeaPrice);// this is calculation of price of one tea multiply by number of total teas..
       }
 
 
       if (sottaprices == "") {
-        sottapricess = 0;
-        sottaprices=0;
+        sottapricess = 0;//total price of sotta of one indivisula person will be zero if user did not enter the data
+        sottaprices=0;//total number of sottas (in this case it will considered as zero)
 
       } else {
-        sottapricess = (sottaprices * sottaPrice);
+        sottapricess = (sottaprices * sottaPrice); //total price of sotta of one indivisula person
       }
 
 
       if (otherprices == "") {
-        otherprices = 0;
+        otherprices = 0;//price of other 
       }
 
 
@@ -124,30 +128,71 @@ NoPerButton.addEventListener('click', () => {
 
       grandTotal=grandTotal+totalSum;
 
+      // now we will add the data in that blank array which is declared above 
+      numberofperson.push(document.getElementById(`${i + 1}p`).value);//this will append the number of person.(for graph we need it)
+      perPersonCost.push(totalSum);//this is the per person total cost ,it is for the graph
 
+//this table will show the data of indivisual and total of thier respective data
       insertData.innerHTML += `    <tr>
   <th scope="row">${document.getElementById(`${i + 1}p`).value}</th>
-  <td>${teaPrice} x 5= ${teaPrices}</td>
-  <td>${sottaprices} x 20 = ${sottapricess}</td>
+  <td>5 x ${teaPrice}= ${teaPrices}</td>
+  <td>20 x ${sottaprices}= ${sottapricess}</td>
   <td>${otherprices}</td>
   <td>${totalSum}</td>
-</tr>`
+</tr>
+`
 
-document.getElementsByClassName('GRNDTTL')[0].innerHTML = `   <table class="table table-dark table-hover">
+//this table will show the grand total and per person ammount which is to be paid
+document.getElementsByClassName('GRNDTTL')[0].innerHTML = `   <table class="table table-dark table-hover">  
 <thead>
   <tr>
     <th scope="col">Grand Total =  ${grandTotal} ₹</th>
    
     <th scope="col">Per Person = ${(grandTotal/nbrPersn).toFixed(2)} ₹</th>
+
+
+    <th><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Graph
+  </button></th>
+
+
   </tr>
 </thead>
-</table>`
+</table>`//this the element where the grand toatl and per person data will be shown
 
-    }
-  })
+    }//for loop`s excution  ends here 
+
+//now we will set the event for the graphical views button which is shown in grand total`s table 
+
+//set the graph accoding to the given data and with help of chart.js library
 
 
-})
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: numberofperson,
+        datasets: [{
+            label: 'Graphical Data',
+            backgroundColor: 'rgb(255, 100, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: perPersonCost
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+
+
+  })//the second number calculate button event end here (warning color bootstrap)
+
+
+})//first number of calculate button`s event end here ....which is in blue color .
 
 
 
+///end///
