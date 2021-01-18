@@ -60,7 +60,7 @@ NoPerButton.addEventListener('click', () => {
   // now fix the price of sottas and tea 
   var TeaPrice = 5;
   var sottaPrice = 20;
-  var grandTotal =0;
+ 
 
   // set event and the function for calculation 
 
@@ -70,7 +70,7 @@ NoPerButton.addEventListener('click', () => {
     let perPersonCost=[];//for the making the chart we need this
     //calculate total number of tea nd ammount of all persons
 
-
+      Var grandTotal =0;
     showdataInDiv.innerHTML = `   <table class="table caption-top">
     <caption class="display-6">Calculated Data</caption>
     <thead>
